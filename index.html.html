@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RishtaCheck — Trust Before You Commit</title>
+<meta name="description" content="India's modern pre-matrimonial verification service. Confidential, legally rigorous background checks before marriage.">
+<meta name="keywords" content="pre-matrimonial verification, marriage verification, background check India, matrimonial due diligence, RishtaCheck">
+<meta property="og:title" content="RishtaCheck — Trust Before You Commit">
+<meta property="og:description" content="India's modern pre-matrimonial verification service. Confidential. Methodical. Legally rigorous.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rishtacheck.in">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A1F3D;--ink-soft:#1B3358;--coral:#E85A4F;--coral-hover:#D64A3F;
+  --coral-soft:#F4A28C;--gold:#C9A961;--gold-soft:#E8D5A8;--cream:#FAF6EE;
+  --paper:#FFFCF7;--warm-white:#FDF9F2;--muted:#6B7B95;--body:#2D3A50;
+  --hairline:rgba(10,31,61,0.1);--shadow-sm:0 1px 3px rgba(10,31,61,0.06);
+  --shadow-md:0 4px 20px rgba(10,31,61,0.08);--shadow-lg:0 8px 40px rgba(10,31,61,0.12);
+  --radius:6px;--serif:'Fraunces',Georgia,serif;--sans:'Manrope',-apple-system,sans-serif;
+  --max-w:1100px;--section-pad:clamp(60px,10vw,120px);
+  --green:#1B8A4A;--green-dark:#0F6835;
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--body);background:var(--paper);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;font-family:inherit}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:var(--coral);margin-bottom:16px;display:block}
+.section-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,5vw,42px);line-height:1.05;letter-spacing:-0.025em;color:var(--ink);margin-bottom:20px}
+.section-title .accent{font-style:italic;font-weight:300;color:var(--coral)}
+.section-lead{font-size:clamp(15px,2vw,17px);line-height:1.65;color:var(--ink-soft);max-width:600px;margin-bottom:40px}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:var(--radius);font-size:15px;font-weight:600;letter-spacing:0.01em;transition:all 0.25s ease;white-space:nowrap}
+.btn-primary{background:var(--coral);color:white;box-shadow:0 2px 12px rgba(232,90,79,0.3)}
+.btn-primary:hover{background:var(--coral-hover);box-shadow:0 4px 20px rgba(232,90,79,0.4);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--cream);border:1px solid rgba(250,246,238,0.3)}
+.btn-secondary:hover{border-color:rgba(250,246,238,0.6);background:rgba(250,246,238,0.08)}
+.btn-wa{background:#25D366;color:white}.btn-wa:hover{background:#1DA851;transform:translateY(-1px)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:14px 0;transition:all 0.35s ease}
+.nav.scrolled{background:rgba(10,31,61,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:8px 0;box-shadow:0 2px 20px rgba(10,31,61,0.15)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo img{height:40px;width:auto}
+.nav-logo-text{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--cream);letter-spacing:-0.02em}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;color:rgba(250,246,238,0.7);transition:color 0.2s ease;letter-spacing:0.01em}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{background:var(--coral)!important;color:white!important;padding:10px 20px!important;border-radius:var(--radius)!important;font-weight:600!important;font-size:12px!important;transition:all 0.25s ease}
+.nav-cta:hover{background:var(--coral-hover)!important;transform:translateY(-1px)}
+.mobile-menu-btn{display:none;background:none;border:none;padding:8px;cursor:pointer}
+.mobile-menu-btn span{display:block;width:24px;height:2px;background:var(--cream);margin:5px 0;transition:all 0.3s ease}
+
+/* HERO */
+.hero{background:var(--ink);padding:clamp(100px,14vw,160px) 0 var(--section-pad);position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
+.hero::before{content:"";position:absolute;top:-20%;right:-10%;width:60%;height:80%;background:radial-gradient(circle,rgba(232,90,79,0.15) 0%,transparent 60%)}
+.hero::after{content:"";position:absolute;bottom:-30%;left:-15%;width:60%;height:80%;background:radial-gradient(circle,rgba(201,169,97,0.08) 0%,transparent 65%)}
+.hero-inner{display:grid;grid-template-columns:1fr auto;gap:clamp(40px,6vw,80px);align-items:center;position:relative;z-index:2}
+.hero-content{position:relative;z-index:2}
+.hero .eyebrow{color:var(--coral-soft);margin-bottom:24px;animation:fadeUp 0.8s ease both}
+.hero-title{font-family:var(--serif);font-weight:400;font-size:clamp(36px,7vw,72px);line-height:0.95;letter-spacing:-0.035em;color:var(--cream);margin-bottom:28px;animation:fadeUp 0.8s 0.1s ease both}
+.hero-title .accent{font-style:italic;font-weight:300;color:var(--gold-soft)}
+.hero-divider{width:60px;height:1px;background:var(--gold);margin-bottom:28px;opacity:0.5;animation:fadeUp 0.8s 0.2s ease both}
+.hero-sub{font-size:clamp(15px,2vw,18px);line-height:1.6;color:rgba(250,246,238,0.75);max-width:480px;margin-bottom:36px;font-weight:300;animation:fadeUp 0.8s 0.3s ease both}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:40px;animation:fadeUp 0.8s 0.4s ease both}
+.hero-trust{font-size:13px;color:rgba(250,246,238,0.45);letter-spacing:0.02em;animation:fadeUp 0.8s 0.5s ease both}
+.hero-logo{animation:fadeUp 0.8s 0.3s ease both;opacity:0.9;max-width:280px}
+.hero-logo img{width:100%;height:auto;filter:drop-shadow(0 8px 32px rgba(0,0,0,0.3))}
+.hero-stats{display:flex;gap:clamp(28px,4vw,56px);margin-top:clamp(40px,5vw,64px);padding-top:36px;border-top:1px solid rgba(250,246,238,0.12);animation:fadeUp 0.8s 0.6s ease both}
+.hero-stat-num{font-family:var(--serif);font-size:clamp(22px,3.5vw,32px);font-weight:500;color:var(--coral-soft);line-height:1;letter-spacing:-0.02em}
+.hero-stat-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,246,238,0.45);margin-top:8px;line-height:1.4}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* STATS BAR */
+.stats-bar{background:var(--warm-white);padding:48px 0;border-bottom:1px solid var(--hairline)}
+.stats-bar-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.stats-bar-item{text-align:center}
+.stats-bar-num{font-family:var(--serif);font-size:clamp(26px,4vw,36px);font-weight:500;color:var(--ink);line-height:1;margin-bottom:8px}
+.stats-bar-text{font-size:13px;color:var(--muted);line-height:1.5;max-width:220px;margin:0 auto}
+
+/* WHY */
+.why-section{padding:var(--section-pad) 0}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 48px;margin-top:16px}
+.why-card{padding-top:24px;border-top:1px solid var(--hairline)}
+.why-num{font-family:var(--serif);font-size:14px;font-weight:500;color:var(--coral);margin-bottom:8px}
+.why-card h3{font-family:var(--serif);font-size:clamp(16px,2vw,20px);font-weight:500;color:var(--ink);margin-bottom:10px;letter-spacing:-0.01em;line-height:1.2}
+.why-card p{font-size:15px;color:var(--body);line-height:1.6}
+
+/* VERIFY */
+.verify-section{padding:var(--section-pad) 0;background:var(--warm-white)}
+.verify-approaches{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:48px}
+.verify-approach-card{padding:32px 28px;background:var(--paper);border:1px solid var(--hairline);border-radius:var(--radius);transition:box-shadow 0.3s ease}
+.verify-approach-card:hover{box-shadow:var(--shadow-md)}
+.verify-approach-icon{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:500;margin-bottom:18px}
+.verify-approach-card h3{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--ink);margin-bottom:10px}
+.verify-approach-card p{font-size:15px;color:var(--body);line-height:1.6}
+.verify-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.verify-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--hairline);font-size:15px;color:var(--ink-soft)}
+.verify-check{width:22px;height:22px;border-radius:50%;background:var(--coral);color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+
+/* PRICING */
+.pricing-section{padding:var(--section-pad) 0}
+.pricing-intro{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:600px;margin-bottom:40px}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.pricing-card{padding:32px 28px;background:var(--warm-white);border:1px solid var(--hairline);border-radius:var(--radius);display:flex;flex-direction:column;transition:box-shadow 0.3s ease,transform 0.3s ease}
+.pricing-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.pricing-card.featured{background:var(--ink);color:var(--cream);border:none;box-shadow:var(--shadow-lg)}
+.pricing-card.featured:hover{transform:translateY(-3px);box-shadow:0 12px 48px rgba(10,31,61,0.2)}
+.pricing-tier-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.pricing-tier{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--coral);font-weight:700}
+.pricing-card.featured .pricing-tier{color:var(--coral-soft)}
+.pricing-badge{background:var(--coral);color:white;padding:3px 10px;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:700;border-radius:3px}
+.pricing-name{font-family:var(--serif);font-size:clamp(22px,3vw,28px);font-weight:500;color:var(--ink);line-height:1.1;letter-spacing:-0.02em;margin-bottom:8px}
+.pricing-card.featured .pricing-name{color:var(--cream)}
+.pricing-desc{font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.pricing-card.featured .pricing-desc{color:rgba(250,246,238,0.65)}
+.pricing-price{font-family:var(--serif);font-size:clamp(28px,4vw,36px);font-weight:500;color:var(--ink);line-height:1;letter-spacing:-0.02em;margin-bottom:4px}
+.pricing-card.featured .pricing-price{color:var(--cream)}
+.pricing-from{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);font-weight:700;display:block;margin-bottom:6px}
+.pricing-card.featured .pricing-from{color:rgba(250,246,238,0.5)}
+.pricing-timeline{font-size:13px;color:var(--muted);margin-bottom:20px;margin-top:4px}
+.pricing-card.featured .pricing-timeline{color:var(--gold-soft)}
+.pricing-includes{font-size:13px;color:var(--body);line-height:1.6;margin-top:auto;padding-top:16px;border-top:1px solid var(--hairline)}
+.pricing-card.featured .pricing-includes{color:rgba(250,246,238,0.7);border-top-color:rgba(250,246,238,0.15)}
+.pricing-includes-label{font-size:9px;letter-spacing:0.25em;text-transform:uppercase;font-weight:700;color:var(--muted);display:block;margin-bottom:6px}
+.pricing-card.featured .pricing-includes-label{color:rgba(250,246,238,0.45)}
+
+/* PROCESS */
+.process-section{padding:var(--section-pad) 0;background:var(--warm-white)}
+.process-step{display:grid;grid-template-columns:80px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid var(--hairline);align-items:start}
+.process-step:last-child{border-bottom:none}
+.step-num{font-family:var(--serif);font-size:clamp(36px,5vw,48px);font-weight:300;color:var(--coral);line-height:1;letter-spacing:-0.04em}
+.step-duration{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-weight:700}
+.step-content h3{font-family:var(--serif);font-size:clamp(18px,2.5vw,22px);font-weight:500;color:var(--ink);margin-bottom:8px;letter-spacing:-0.015em;line-height:1.2}
+.step-content p{font-size:15px;color:var(--body);line-height:1.6;max-width:560px}
+
+/* TRUST */
+.trust-section{padding:var(--section-pad) 0}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.trust-card{padding:28px 24px;background:var(--warm-white);border-top:3px solid var(--coral);border-radius:0 0 var(--radius) var(--radius);transition:box-shadow 0.3s ease}
+.trust-card:hover{box-shadow:var(--shadow-md)}
+.trust-icon{font-family:var(--serif);font-size:36px;color:var(--coral);font-style:italic;font-weight:300;line-height:0.8;margin-bottom:20px}
+.trust-card h3{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.25}
+.trust-card p{font-size:14px;color:var(--body);line-height:1.6}
+
+/* TESTIMONIALS */
+.testimonials-wrap{display:flex;flex-direction:column;gap:20px}
+.testimonial{padding:36px 40px;background:var(--ink);color:var(--cream);border-radius:var(--radius)}
+.testimonial-quote-mark{font-family:var(--serif);font-size:48px;color:var(--coral);line-height:0.5;font-weight:300;margin-bottom:18px;font-style:italic}
+.testimonial-text{font-family:var(--serif);font-size:clamp(15px,1.8vw,18px);line-height:1.5;font-weight:300;margin-bottom:16px}
+.testimonial-attr{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-soft);font-weight:700}
+
+/* FAQ */
+.faq-section{padding:var(--section-pad) 0;background:var(--warm-white)}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 48px;margin-top:20px}
+.faq-item{padding:20px 0;border-top:1px solid var(--hairline)}
+.faq-q{font-family:var(--serif);font-size:16px;font-weight:500;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.faq-q .q-mark{color:var(--coral);font-style:italic;margin-right:6px}
+.faq-a{font-size:14px;color:var(--body);line-height:1.6}
+
+/* CTA */
+.cta-section{background:var(--ink);padding:var(--section-pad) 0;position:relative;overflow:hidden}
+.cta-section::before{content:"";position:absolute;top:-20%;left:-10%;width:50%;height:70%;background:radial-gradient(circle,rgba(232,90,79,0.12) 0%,transparent 60%)}
+.cta-section::after{content:"";position:absolute;bottom:-25%;right:-10%;width:50%;height:70%;background:radial-gradient(circle,rgba(201,169,97,0.08) 0%,transparent 65%)}
+.cta-content{position:relative;z-index:2}
+.cta-section .eyebrow{color:var(--coral-soft)}
+.cta-title{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5.5vw,52px);line-height:0.98;letter-spacing:-0.025em;color:var(--cream);max-width:600px;margin-bottom:24px}
+.cta-title .accent{font-style:italic;color:var(--gold-soft);font-weight:300}
+.cta-sub{font-size:clamp(15px,2vw,18px);line-height:1.6;color:rgba(250,246,238,0.75);max-width:520px;margin-bottom:48px;font-weight:300}
+.cta-buttons{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:56px}
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;padding-top:40px;border-top:1px solid rgba(250,246,238,0.15)}
+.contact-block{border-left:2px solid var(--coral);padding-left:20px}
+.contact-label{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(250,246,238,0.45);margin-bottom:8px;font-weight:700}
+.contact-value{font-family:var(--serif);font-size:clamp(15px,2vw,19px);color:var(--cream);line-height:1.2;font-weight:500}
+.contact-detail{font-size:13px;color:rgba(250,246,238,0.6);margin-top:6px;line-height:1.5}
+
+/* FOOTER */
+.footer{background:var(--ink);padding:32px 0;border-top:1px solid rgba(250,246,238,0.1)}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.footer-legal{font-size:11px;color:rgba(250,246,238,0.4);line-height:1.6;max-width:500px}
+.footer-tagline{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold-soft);text-align:right;font-weight:300;line-height:1.4;flex-shrink:0}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none}.mobile-menu-btn{display:block}
+  .hero{min-height:auto;padding-top:100px}.hero-inner{grid-template-columns:1fr}.hero-logo{display:none}
+  .hero-stats{flex-direction:column;gap:24px}
+  .stats-bar-inner{grid-template-columns:1fr;gap:24px}
+  .why-grid,.verify-approaches,.verify-list,.pricing-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
+  .process-step{grid-template-columns:60px 1fr;gap:16px}
+  .testimonial{padding:24px 20px}
+  .footer-inner{flex-direction:column;align-items:flex-start}.footer-tagline{text-align:left}
+  .btn{padding:14px 24px;font-size:14px;width:100%}
+  .hero-buttons,.cta-buttons{flex-direction:column}
+}
+@media(max-width:480px){
+  .hero-title{font-size:34px}.section-title{font-size:26px}.cta-title{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="80 30 360 310" width="44" height="38" fill="none">
+  <circle cx="195" cy="68" r="27" fill="#FAF6EE"/>
+  <path d="M195 106 C125 128, 95 192, 112 265 C122 300, 158 326, 210 330 L210 306 C168 301, 142 278, 133 250 C118 198, 140 144, 195 126Z" fill="#FAF6EE"/>
+  <circle cx="325" cy="68" r="27" fill="#E85A4F"/>
+  <path d="M325 106 C395 128, 425 192, 408 265 C398 300, 362 326, 310 330 L310 306 C352 301, 378 278, 387 250 C402 198, 380 144, 325 126Z" fill="#E85A4F"/>
+  <path d="M260 150 L312 173 C316 175, 319 179, 319 183 L319 226 C319 266, 295 296, 260 312 C225 296, 201 266, 201 226 L201 183 C201 179, 204 175, 208 173 Z" fill="#FAF6EE" stroke="#C9A961" stroke-width="3" opacity="0.15"/>
+  <path d="M260 163 L304 182 C306 183, 308 186, 308 188 L308 222 C308 256, 288 280, 260 294 C232 280, 212 256, 212 222 L212 188 C212 186, 214 183, 216 182 Z" fill="rgba(250,246,238,0.1)"/>
+  <path d="M237 222 L254 241 L286 203" stroke="#C9A961" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
+      <span class="nav-logo-text">RishtaCheck</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why">Why Verify</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Book Free Consultation</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">Pre-Marriage Verification</span>
+        <h1 class="hero-title">Know who<br>you're <span class="accent">marrying.</span></h1>
+        <div class="hero-divider"></div>
+        <p class="hero-sub">India's confidential pre-matrimonial verification service. Discreet, methodical, legally rigorous — so your family can decide with clarity.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Book a free 15-min consultation</a>
+          <a href="https://wa.me/918274912351" class="btn btn-secondary" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp us
+          </a>
+        </div>
+        <p class="hero-trust">Confidential · DPDP-compliant · Trusted by families across India</p>
+
+        <div class="hero-stats">
+          <div><div class="hero-stat-num">7+</div><div class="hero-stat-label">Verification<br>categories</div></div>
+          <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Legal &<br>compliant</div></div>
+          <div><div class="hero-stat-num">10 days</div><div class="hero-stat-label">Average<br>turnaround</div></div>
+        </div>
+      </div>
+      <div class="hero-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 460" width="320" height="280" style="filter:drop-shadow(0 8px 32px rgba(0,0,0,0.2))" fill="none">
+  <!-- Left person (cream on dark) -->
+  <circle cx="195" cy="68" r="27" fill="#FAF6EE" opacity="0.85"/>
+  <path d="M195 106 C125 128, 95 192, 112 265 C122 300, 158 326, 210 330 L210 306 C168 301, 142 278, 133 250 C118 198, 140 144, 195 126Z" fill="#FAF6EE" opacity="0.85"/>
+  
+  <!-- Right person (coral) -->
+  <circle cx="325" cy="68" r="27" fill="#E85A4F"/>
+  <path d="M325 106 C395 128, 425 192, 408 265 C398 300, 362 326, 310 330 L310 306 C352 301, 378 278, 387 250 C402 198, 380 144, 325 126Z" fill="#E85A4F"/>
+  
+  <!-- Shield outer (cream with gold border) -->
+  <path d="M260 150 L312 173 C316 175, 319 179, 319 183 L319 226 C319 266, 295 296, 260 312 C225 296, 201 266, 201 226 L201 183 C201 179, 204 175, 208 173 Z" fill="rgba(250,246,238,0.12)" stroke="#C9A961" stroke-width="3"/>
+  
+  <!-- Shield inner -->
+  <path d="M260 163 L304 182 C306 183, 308 186, 308 188 L308 222 C308 256, 288 280, 260 294 C232 280, 212 256, 212 222 L212 188 C212 186, 214 183, 216 182 Z" fill="rgba(250,246,238,0.08)"/>
+  
+  <!-- Checkmark (gold) -->
+  <path d="M237 222 L254 241 L286 203" stroke="#C9A961" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Text -->
+  <text x="260" y="376" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#FAF6EE">Rishta</tspan><tspan fill="#E85A4F">Check</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="260" y="412" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="500" fill="rgba(250,246,238,0.5)" letter-spacing="4.5">
+    TRUST BEFORE YOU COMMIT
+  </text>
+</svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar reveal">
+  <div class="container stats-bar-inner">
+    <div class="stats-bar-item"><div class="stats-bar-num">1 in 4</div><div class="stats-bar-text">Matrimonial profiles in India contain materially false information about education, employment, or income</div></div>
+    <div class="stats-bar-item"><div class="stats-bar-num">68%</div><div class="stats-bar-text">Of matrimonial fraud cases are discovered only after marriage — when reversal becomes costly</div></div>
+    <div class="stats-bar-item"><div class="stats-bar-num">₹20L+</div><div class="stats-bar-text">Average direct financial cost of a failed marriage due to undisclosed information</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section" id="why">
+  <div class="container">
+    <span class="eyebrow reveal">Why verification matters</span>
+    <h2 class="section-title reveal">A marriage decision deserves<br><span class="accent">more than trust.</span></h2>
+    <p class="section-lead reveal">Families make lifelong commitments based on biodatas, brief meetings, and the word of intermediaries. Verification isn't suspicion — it's the responsible next step before the most consequential decision of a lifetime.</p>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-num">01</div><h3>Identity discrepancies</h3><p>Fabricated identities, undisclosed prior marriages, or falsified ID documents — issues a brief meeting simply cannot reveal.</p></div>
+      <div class="why-card reveal"><div class="why-num">02</div><h3>Inflated credentials</h3><p>Education, employment, and income claims that don't withstand verification with source institutions or employers.</p></div>
+      <div class="why-card reveal"><div class="why-num">03</div><h3>Hidden legal exposure</h3><p>Undisclosed criminal cases, pending divorce proceedings, or financial disputes that follow into the marriage.</p></div>
+      <div class="why-card reveal"><div class="why-num">04</div><h3>Cross-border complexity</h3><p>NRI matches involve jurisdictions, visa statuses, and foreign records that no Indian family can verify alone.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE VERIFY -->
+<section class="verify-section" id="services">
+  <div class="container">
+    <span class="eyebrow reveal">What we verify</span>
+    <h2 class="section-title reveal">Comprehensive checks,<br><span class="accent">cleanly delivered.</span></h2>
+    <p class="section-lead reveal">Every RishtaCheck verification draws on public records, institutional confirmations, and licensed field investigation — assembled into a single, color-coded report you can act on with confidence.</p>
+    <div class="verify-approaches reveal">
+      <div class="verify-approach-card"><div class="verify-approach-icon">L</div><h3>Legal rigor</h3><p>Every methodology stays strictly within Indian privacy and evidence law. Our reports are built to stand up to legal scrutiny.</p></div>
+      <div class="verify-approach-card"><div class="verify-approach-icon">D</div><h3>Discreet by design</h3><p>The subject is never alerted. All verification uses public records and discreet field methods that protect everyone's privacy.</p></div>
+    </div>
+    <div class="verify-list reveal">
+      <div class="verify-item"><span class="verify-check">✓</span> Identity & address verification</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Educational credential check</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Employment & income verification</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Criminal record & litigation</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Marital status verification</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Financial standing assessment</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Family background check</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Social & character references</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Lifestyle assessment</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Property & asset verification</div>
+      <div class="verify-item"><span class="verify-check">✓</span> NRI cross-border checks</div>
+      <div class="verify-item"><span class="verify-check">✓</span> Social media deep scan</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <span class="eyebrow reveal">Choose your verification</span>
+    <h2 class="section-title reveal">Four packages, <span class="accent">one purpose.</span></h2>
+    <p class="pricing-intro reveal">Each package is fixed in scope and timeline. Quote ranges become exact prices once we confirm specifics in a free 15-minute consultation. 50% advance, balance on delivery.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="pricing-tier-row"><span class="pricing-tier">Tier 01</span></div>
+        <div class="pricing-name">Basic Verification</div>
+        <div class="pricing-desc">Foundational identity, education, and employment checks for early-stage matchmaking decisions.</div>
+        <span class="pricing-from">From</span>
+        <div class="pricing-price">₹15,999</div>
+        <div class="pricing-timeline">Delivered in 5–7 days</div>
+        <div class="pricing-includes"><span class="pricing-includes-label">Includes</span>Identity & address · Education credential · Employment · Criminal record · Marital status · Social media scan</div>
+      </div>
+      <div class="pricing-card featured reveal">
+        <div class="pricing-tier-row"><span class="pricing-tier">Tier 02</span><span class="pricing-badge">Most Popular</span></div>
+        <div class="pricing-name">Standard Verification</div>
+        <div class="pricing-desc">Our workhorse package. Comprehensive checks for most Indian families before formal engagement.</div>
+        <span class="pricing-from">From</span>
+        <div class="pricing-price">₹24,999</div>
+        <div class="pricing-timeline">Delivered in 10–14 days</div>
+        <div class="pricing-includes"><span class="pricing-includes-label">Includes</span>Everything in Basic, plus financial standing · Litigation search · References · Family background</div>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-tier-row"><span class="pricing-tier">Tier 03</span></div>
+        <div class="pricing-name">Comprehensive</div>
+        <div class="pricing-desc">Deeper verification for affluent families, business families, complex backgrounds, or second marriages.</div>
+        <span class="pricing-from">From</span>
+        <div class="pricing-price">₹59,999</div>
+        <div class="pricing-timeline">Delivered in 18–22 days</div>
+        <div class="pricing-includes"><span class="pricing-includes-label">Includes</span>Everything in Standard, plus in-person references · Business records (MCA, GST) · Asset verification · Character assessment</div>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-tier-row"><span class="pricing-tier">Tier 04</span></div>
+        <div class="pricing-name">NRI Premium</div>
+        <div class="pricing-desc">Cross-border verification for NRI matches — overseas employment, visa, foreign assets, international records.</div>
+        <span class="pricing-from">From</span>
+        <div class="pricing-price">₹1,49,999</div>
+        <div class="pricing-timeline">Delivered in 25–35 days</div>
+        <div class="pricing-includes"><span class="pricing-includes-label">Includes</span>Everything in Comprehensive, plus overseas employment · Foreign asset check · International litigation · 90-day advisory</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="container">
+    <span class="eyebrow reveal">How it works</span>
+    <h2 class="section-title reveal">From inquiry to <span class="accent">clarity,</span><br>in six clear steps.</h2>
+    <div class="process-steps">
+      <div class="process-step reveal"><div><div class="step-num">01</div><div class="step-duration">Free · 15 min</div></div><div class="step-content"><h3>Reach out & consult</h3><p>Share your concerns via our website, WhatsApp, or Instagram. We schedule a confidential 15-minute consultation to understand your specific situation — no charge, no obligation.</p></div></div>
+      <div class="process-step reveal"><div><div class="step-num">02</div><div class="step-duration">Within 24 hrs</div></div><div class="step-content"><h3>Proposal & scope</h3><p>We send a detailed written proposal with the recommended package, exact scope, fixed pricing, and timeline. No surprises. No hidden fees. No fine print.</p></div></div>
+      <div class="process-step reveal"><div><div class="step-num">03</div><div class="step-duration">Day 0</div></div><div class="step-content"><h3>Engagement & kickoff</h3><p>Signed engagement letter, 50% advance, and a secure intake form. Verification begins the day after we receive all initial information from you.</p></div></div>
+      <div class="process-step reveal"><div><div class="step-num">04</div><div class="step-duration">5–35 days</div></div><div class="step-content"><h3>Discreet verification</h3><p>Our team executes verification across all agreed categories using strictly legal channels. Weekly status updates keep you informed without compromising confidentiality.</p></div></div>
+      <div class="process-step reveal"><div><div class="step-num">05</div><div class="step-duration">Final day</div></div><div class="step-content"><h3>Report & walkthrough</h3><p>You receive a color-coded report with executive summary, detailed findings, source documents, and a personal video walkthrough call to discuss every finding.</p></div></div>
+      <div class="process-step reveal"><div><div class="step-num">06</div><div class="step-duration">15 days</div></div><div class="step-content"><h3>Decision support</h3><p>Post-delivery advisory for 15 days. Additional services available — prenuptial consultation, monitoring, or follow-up verification as your family needs.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section" id="trust">
+  <div class="container">
+    <span class="eyebrow reveal">Why families choose us</span>
+    <h2 class="section-title reveal">Built differently, <span class="accent">deliberately.</span></h2>
+    <div class="trust-grid">
+      <div class="trust-card reveal"><div class="trust-icon">"</div><h3>Legally rigorous from day one</h3><p>Legal compliance, evidence standards, and confidentiality protections are built into how we work — not afterthoughts. Every report meets courtroom-grade standards.</p></div>
+      <div class="trust-card reveal"><div class="trust-icon">~</div><h3>Strictly legal methods</h3><p>No grey areas. No illegal data. No promises we cannot keep within the DPDP Act and Indian privacy law. Everything in our reports stands up to legal scrutiny.</p></div>
+      <div class="trust-card reveal"><div class="trust-icon">*</div><h3>Confidentiality, always</h3><p>Your verification stays within our team. Encrypted records, attorney-grade confidentiality, and absolutely no marketing use of any client information — ever.</p></div>
+    </div>
+    <div class="testimonials-wrap">
+      <div class="testimonial reveal">
+        <div class="testimonial-quote-mark">"</div>
+        <div class="testimonial-text">We were three weeks away from formal engagement. The RishtaCheck report uncovered a discrepancy in employment that our families had completely missed. The way they presented the findings — calmly, factually, without drama — helped us make the right decision with dignity.</div>
+        <div class="testimonial-attr">— Family in Bangalore · NRI match verification</div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-quote-mark">"</div>
+        <div class="testimonial-text">My daughter was being matched with a family we barely knew through a matrimonial portal. RishtaCheck verified everything — education, property, even a previous engagement that was never disclosed. The report gave us the confidence to ask the right questions before it was too late.</div>
+        <div class="testimonial-attr">— Father in Delhi · Standard verification</div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testimonial-quote-mark">"</div>
+        <div class="testimonial-text">Honestly, we expected to find something wrong. Instead, the report came back completely clean — every claim checked out. That peace of mind was worth every rupee. We went ahead with the wedding knowing we'd done our due diligence properly.</div>
+        <div class="testimonial-attr">— Family in Mumbai · Comprehensive verification</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <span class="eyebrow reveal">Frequently asked</span>
+    <h2 class="section-title reveal">What families <span class="accent">often ask us.</span></h2>
+    <div class="faq-grid">
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> Is this legal in India?</div><div class="faq-a">Yes. Every verification uses public records, institutional channels, and consented methods that comply with Indian law including the DPDP Act 2023.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> Will the subject find out?</div><div class="faq-a">No. All verification is discreet by design. Methods used don't alert the person being verified. Your inquiry remains confidential at every stage.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> What if nothing concerning is found?</div><div class="faq-a">That is the most common outcome — and the most valuable one. A clean report gives you confidence to proceed without doubt. Peace of mind is the product.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> How accurate is the verification?</div><div class="faq-a">We source from primary records and institutions. Every finding is documented. Where data cannot be verified definitively, we say so clearly rather than speculate.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> Do you handle NRI cases?</div><div class="faq-a">Yes. Our NRI Premium package handles cross-border verification — overseas employment, visa status, foreign assets, and international litigation via vetted partners.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> Can you access bank statements or call records?</div><div class="faq-a">No. We never access data requiring illegal means. Any firm promising bank statements or call records without consent is operating outside the law.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> How quickly can you start?</div><div class="faq-a">Same week as the consultation. With signed engagement letter and intake form, verification begins within 48 hours. Urgent delivery available at a surcharge.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> Who sees the final report?</div><div class="faq-a">Only you and named family members you authorize. Reports are encrypted, watermarked, and never shared with any third party — including the subject's family.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> What is your refund policy?</div><div class="faq-a">If we cannot deliver the verification scope agreed upon, we refund the unused portion. Detailed terms are in the engagement letter you sign at kickoff.</div></div>
+      <div class="faq-item reveal"><div class="faq-q"><span class="q-mark">Q.</span> What if we want more verification later?</div><div class="faq-a">Existing clients receive 30% off any follow-up verification within 12 months — including post-engagement monitoring or re-verification before the wedding.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container cta-content">
+    <span class="eyebrow reveal">Begin your verification</span>
+    <h2 class="cta-title reveal">Ready for <span class="accent">clarity</span><br>before the commitment?</h2>
+    <p class="cta-sub reveal">Every great marriage begins with informed consent. Let us help your family make the most important decision with the facts that matter — verified, sourced, and clearly presented.</p>
+    <div class="cta-buttons reveal">
+      <a href="https://wa.me/918274912351" class="btn btn-wa" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp us now
+      </a>
+      <a href="mailto:rishtacheck@gmail.com" class="btn btn-primary">Email us</a>
+      <a href="tel:+918274912351" class="btn btn-secondary">Call us</a>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-block"><div class="contact-label">Speak with us</div><div class="contact-value">+91 82749 12351</div><div class="contact-detail">WhatsApp & calls · 10 AM – 10 PM IST</div></div>
+      <div class="contact-block"><div class="contact-label">Write to us</div><div class="contact-value">rishtacheck@gmail.com</div></div>
+      <div class="contact-block"><div class="contact-label">Visit online</div><div class="contact-value">rishtacheck.in</div><div class="contact-detail">Book a free 15-min consultation</div></div>
+      <div class="contact-block"><div class="contact-label">Follow</div><div class="contact-value">@rishtacheck</div><div class="contact-detail">Instagram · LinkedIn · YouTube</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-legal">RishtaCheck is a confidential pre-matrimonial verification service operating in full compliance with Indian privacy and consumer protection law. All engagements governed by written agreement. &copy; 2026 RishtaCheck. All rights reserved.</div>
+    <div class="footer-tagline">Trust before you commit.</div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}});},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>observer.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth',block:'start'})}});});
+</script>
+</body>
+</html>
